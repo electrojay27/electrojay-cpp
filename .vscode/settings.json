@@ -1,0 +1,22 @@
+{
+    "backgroundCover.imagePath": "e:\\微信图片_20230102154314.jpg",
+    "files.associations": {
+        "iostream": "cpp",
+        "vector": "cpp",
+        "cmath": "cpp",
+        "ostream": "cpp",
+        "iosfwd": "cpp",
+        "iomanip": "cpp",
+        "new": "cpp",
+        "algorithm": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "regex": "cpp",
+        "utility": "cpp",
+        "valarray": "cpp",
+        "*.tcc": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
