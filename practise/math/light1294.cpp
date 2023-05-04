@@ -4,11 +4,15 @@ using namespace std;
 using i64 = long long;
 
 void solve(int x){
-	i64 n,c;
-	cin >> n >> c;
+	i64 n,m;
+	cin >> n >> m;
 
 	cout << "Case " << x << ": ";
 	
+	i64 ans = 0;
+	ans = n * m / 2;
+
+	cout << ans << "\n";
 }
 
 int main()

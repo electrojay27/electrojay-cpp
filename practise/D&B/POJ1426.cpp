@@ -1,7 +1,8 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 
-using i64 = long long;
+#define i64 long long
 
 int main()
 {
@@ -12,13 +13,22 @@ int main()
 	while(cin >> n){
 		if(!n)break;
 		i64 ans = 1;
-		while(ans % n){
-			if(ans & 1){
-				ans *= 10;
-			}else ans ++;
+		queue<i64> q;
+		q.push(ans);
+		int flag = 0;
+		while(!q.empty()){
+			i64 cnt = q.front();
+			q.pop();
+			if(cnt % n == 0){
+				cout << cnt << "\n";
+				flag = 1;
+				break;
+			}
+			q.push(cnt * 10);
+			q.push(cnt * 10 + 1);
 		}
 
-		cout << ans << "\n";
+		if(!flag)cout << -1 << "\n";
 	}
 	return 0;
 }
