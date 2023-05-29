@@ -1,8 +1,9 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
+using i64 = long long;
+
+int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 

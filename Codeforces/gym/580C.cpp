@@ -3,35 +3,60 @@ using namespace std;
 
 using i64 = long long;
 
-int solve(string s,char c)
-{
-	if(s.size() == 1){
-		return s[0] != c;
-	}
-
-	int mid = s.size() / 2;
-	int cntl = solve(string(s.begin(),s.begin() + mid),c + 1);
-	int cntr = solve(string(s.begin() + mid,s.end()),c + 1);
-	cntl +=	mid - count(s.begin() + mid,s.end(),c);
-	cntr +=	mid - count(s.begin(),s.begin() + mid,c);
-
-	return min(cntl,cntr);
-}
-
-int main()
-{
+int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	int t;
-	cin >> t;
-	while(t --){
-		int n;
-		string s;
-		cin >> n >> s;
+	int n,m;
+	cin >> n >> m;
 
-		cout << solve(s,'a') << "\n";
+	vector<int> a(n);
+	for (int i = 0; i < n; i++) {
+		cin >> a[i];
 	}
 
-	return 0;
+	vector<int> mp[n];
+	for (int i = 0; i < n - 1; i++) {
+		int x,y;
+		cin >> x >> y;
+		if (x == y)continue;
+		mp[x - 1].push_back(y - 1);
+		mp[y - 1].push_back(x - 1);
+		// cout << x << " " << y << "\n";
+	}
+
+	vector<int> v(n,0),vis(n,0);
+	queue<int> q;
+	q.push(0);
+	v[0] = a[0];
+	vis[0] = 1;
+	int ans = 0;
+	while (!q.empty()) {
+		int to = q.front();
+		q.pop();
+		// cout << to << " " << mp[to].size() << "\n";
+		if (to && mp[to].size() == 1) {
+			ans ++;
+			continue;
+		}
+		for (int i = 0; i < mp[to].size(); i++) {
+			if (vis[mp[to][i]]) continue;
+			if (a[mp[to][i]]) {
+				if (a[mp[to][i]] + v[to] <= m) {
+					q.push(mp[to][i]);
+					v[mp[to][i]] = a[mp[to][i]] + v[to];
+					// cout << v[mp[to][i]] << "\n";
+				}
+			} else {
+				v[mp[to][i]] = 0;
+				q.push(mp[to][i]);
+			}
+
+			// cout << mp[to][i] << "\n";
+			
+			vis[mp[to][i]] = 1;
+		}
+	}
+
+	cout << ans << "\n";
 }
