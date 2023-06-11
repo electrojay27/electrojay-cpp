@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 using i64 = long long;
 
 template<class T>
@@ -11,3 +14,4 @@ constexpr T power(T a,i64 b){
 	return res;
 }//快速幂
 
+template<class T>
