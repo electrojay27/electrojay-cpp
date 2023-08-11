@@ -59,8 +59,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "e:/Code/.git/all.jc/electrojay-cpp/ojc++22/17",
-      "program": "e:/Code/.git/all.jc/electrojay-cpp/ojc++22/17/build/Debug/outDebug",
+      "cwd": "e:/Code/.git/all.jc/electrojay-cpp",
+      "program": "e:/Code/.git/all.jc/electrojay-cpp/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -21,6 +21,7 @@ constexpr i64 mul(i64 a, i64 b, i64 p) {
     }
     return res;
 }
+
 template<i64 P>
 struct MLong {
     i64 x;
